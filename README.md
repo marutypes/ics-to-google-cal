@@ -1,5 +1,9 @@
 # ICS to Google Calendar
 
+
+https://github.com/user-attachments/assets/1aa1c55b-79a3-439b-bd8a-2824ec5ac76d
+
+
 This small Windows utility lets you double-click an `.ics` file on your desktop or in Explorer and have it open the event in Google Calendar so you can create it with a single click.
 
 The idea is simple: when Windows sees an `.ics` file, it can open it using a custom command rather than a desktop calendar app. This tool reads the event data from the `.ics` file and launches the Google Calendar event-creation URL for each event in the file.
