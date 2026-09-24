@@ -1,0 +1,45 @@
+## Build outputs
+[Oo]bj/
+[Bb]in/
+[Dd]ebug/
+[Rr]elease/
+
+## .NET / Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.cache
+*.pdb
+*.dll
+*.exe
+*.apphost
+*.runtimeconfig
+*.runtimeconfig.json
+*.deps.json
+*.assemblyinfo
+*.AssemblyInfo.cs
+
+## Test results
+TestResults/
+coverage*/
+*.trx
+
+## NuGet
+packages/
+*.nupkg
+*.snupkg
+.project.assets.json
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
+
+## OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+## Misc
+*.log
