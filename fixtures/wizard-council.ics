@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ICS to Google Calendar Demo//EN
+BEGIN:VEVENT
+UID:demo-wizard-council-20261003@example.com
+DTSTAMP:20260924T204500Z
+DTSTART:20261003T230000Z
+DTEND:20261004T003000Z
+SUMMARY:Emergency Wizard Council Meeting
+LOCATION:The Moon Tower, 123 Arcane Avenue, Ottawa, ON
+DESCRIPTION:Agenda:\n\n- Determine who turned the mayor into a goose\n- Vote on whether necromancy counts as remote work\n- Order pizza\n\nRobes optional. Staffs must be checked at the door.
+END:VEVENT
+END:VCALENDAR

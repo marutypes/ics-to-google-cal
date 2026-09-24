@@ -39,4 +39,34 @@ public class CalendarUrlBuilderTests
 
         Assert.Equal("20240102/20240104", range);
     }
+
+    [Fact]
+    public void BuildGoogleCalendarUrl_ForFixtureEvent_UsesExpectedValues()
+    {
+        var fixturePath = Path.Combine(
+            AppContext.BaseDirectory,
+            "..",
+            "..",
+            "..",
+            "..",
+            "fixtures",
+            "wizard-council.ics"
+        );
+        var fullFixturePath = Path.GetFullPath(fixturePath);
+        Assert.True(File.Exists(fullFixturePath), $"Expected fixture file at {fullFixturePath}");
+
+        var calendar = Calendar.Load(File.ReadAllText(fullFixturePath));
+        Assert.NotNull(calendar);
+
+        var evt = Assert.Single(calendar!.Events)!;
+        var url = CalendarUrlBuilder.BuildGoogleCalendarUrl(evt);
+
+        Assert.Contains("action=TEMPLATE", url);
+        Assert.Contains("text=Emergency%20Wizard%20Council%20Meeting", url);
+        Assert.Contains(
+            "location=The%20Moon%20Tower%2C%20123%20Arcane%20Avenue%2C%20Ottawa%2C%20ON",
+            url
+        );
+        Assert.Contains("dates=20261003T230000Z%2F20261004T003000Z", url);
+    }
 }

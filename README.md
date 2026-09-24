@@ -1,8 +1,6 @@
 # ICS to Google Calendar
 
-
 https://github.com/user-attachments/assets/1aa1c55b-79a3-439b-bd8a-2824ec5ac76d
-
 
 This small Windows utility lets you double-click an `.ics` file on your desktop or in Explorer and have it open the event in Google Calendar so you can create it with a single click.
 
@@ -21,7 +19,33 @@ That means the experience becomes: "double-click the file, and Google Calendar o
 
 ## How to use it
 
-### 1. Build the app
+### 1. Download the app
+
+You can download the latest Windows build from the GitHub Releases page:
+
+https://github.com/marutypes/ics-to-google-cal/releases
+
+If you prefer to build it yourself, see the local build instructions below.
+
+### 2. Associate `.ics` files with the app on Windows
+
+You want Windows to open `.ics` files with this program instead of a default calendar app.
+
+The recommended workflow is to open an `.ics` file, choose Open with, and set the app to always open `.ics` files. Microsoft documents the general file-association flow [here](https://support.microsoft.com/en-us/windows/apps/change-default-apps-in-windows).
+
+One way to do it is:
+
+1. Open File Explorer.
+2. Right-click any `.ics` file.
+3. Choose Open with > Choose another app.
+4. Select More apps.
+5. If the app is not listed, choose Look for another app on this PC.
+6. Browse to the downloaded or built executable for this project.
+7. Check "Always use this app to open .ics files".
+
+After that, double-clicking an `.ics` file should launch the application and open the event in Google Calendar.
+
+### 3. Build the app locally
 
 From the repository root:
 
@@ -31,23 +55,7 @@ dotnet build
 
 This produces a runnable executable in `bin/Debug/net9.0/`.
 
-### 2. Associate `.ics` files with the app on Windows
-
-You want Windows to open `.ics` files with this program instead of a default calendar app.
-
-One way to do it is:
-
-1. Open File Explorer.
-2. Right-click any `.ics` file.
-3. Choose Open with > Choose another app.
-4. Select More apps.
-5. If the app is not listed, choose Look for another app on this PC.
-6. Browse to the compiled executable for this project.
-7. Check "Always use this app to open .ics files".
-
-After that, double-clicking an `.ics` file should launch the application and open the event in Google Calendar.
-
-### 3. Run it manually
+### 4. Run it manually
 
 You can also invoke it from the command line:
 
@@ -80,6 +88,8 @@ dotnet test
 ```
 
 This runs the xUnit test project and checks the date and URL-building logic used by the app.
+
+A sample fixture is included at [`fixtures/wizard-council.ics`](fixtures/wizard-council.ics) for quick manual testing or local validation of a realistic calendar invite.
 
 ## Notes
 
